@@ -39,7 +39,7 @@ const posty=myArray
 // const posty= myArray==undefined||null ? backup : myArray
 console.log(4444)
 console.log(posty)
-if (posty!=null||undefined){
+// if (posty!=null||undefined){
   posty.forEach((post) => {
     // console.log(post.title)
     // const fileName = `${post.title}.md`;
