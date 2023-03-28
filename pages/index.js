@@ -75,7 +75,7 @@ if (posty!=null||undefined){
 
     return {
       slug,
-      frontmatter,data,myArray
+      frontmatter,data
     }
   })
   
