@@ -25,9 +25,9 @@ export default function Home({ posts }) {
 }
 export async function getStaticProps() {
   function objectToArray(obj) {
-//     if (obj != null||undefined){
+    if (obj != null||undefined){
     return Object.keys(obj).map(key => obj[key]);
-//     }
+    }
   }
 async function getData() {
   try {
@@ -55,7 +55,7 @@ const posty=myArray
 // const posty= myArray==undefined||null ? backup : myArray
 console.log(4444)
 console.log(posty)
-// if (posty!=null||undefined){
+if (posty!=null||undefined){
   posty.forEach((post) => {
     // console.log(post.title)
     // const fileName = `${post.title}.md`;
@@ -70,7 +70,7 @@ console.log(posty)
     const fileContent = `---\ntitle: ${post.title}\ndate: ${post.date} 📅\n \ncover_image: ${post.thumbnail}\ncoee: ${post.cover_image}\nexcerpt: ${post.excerpt}\n---\n\n${post.content}`;
 
     fs.writeFileSync(filePath, fileContent);
-  })
+  })}
 
 
   // Get files from the posts dir
