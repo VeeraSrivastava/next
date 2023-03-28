@@ -32,6 +32,7 @@ export async function getStaticProps() {
   const snapshot = await get(ref(database, 'posts'));
   const data = snapshot.val();
   console.log(data)
+  if (data!=null||undefined){
   const myArray = objectToArray(data);
   
   // const posty = [{title: 'Post 1', date: '8 October, 3005', excerpt: 'excerpt', content: 'Content of post 1'}, {title: 'Post 2', content: 'Content of post 2'}];
@@ -82,5 +83,5 @@ if (posty!=null||undefined){
     props: {
       posts: posts.sort(sortByDate),
     },
-  }
+  }}
 }
