@@ -35,7 +35,7 @@ export async function getStaticProps() {
 
 //   console.log(snapshot.val())
    onValue(ref(database, "posts"), (snapshot) => {      
-   console.log( snapshot.val() )
+   console.log( snapshot )
  })
   const myArray =objectToArray(snapshot.val())
 // let data = snapshot.val();
