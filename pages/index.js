@@ -8,7 +8,7 @@ import { getAraray } from '../getArray'
 import { database,ref,set ,onValue,get,getStorage,Sref,uploadBytes,getDownloadURL,storage, listAll,list } from "../firebase"
 export default function Home({ posts }) {
   const tro=getAraray()
-  console.log(tro+"tro")
+  // console.log(tro+"tro")
   return (
     <div>
       <Head>
@@ -36,23 +36,25 @@ export async function getStaticProps() {
   
   // const posty = [{title: 'Post 1', date: '8 October, 3005', excerpt: 'excerpt', content: 'Content of post 1'}, {title: 'Post 2', content: 'Content of post 2'}];
 const posty=myArray;
-  if (  posty != null||undefined||[]){
+console.log(4444)
+console.log(posty)
+if (posty!=null||undefined){
   posty.forEach((post) => {
-    console.log(post.title)
+    // console.log(post.title)
     // const fileName = `${post.title}.md`;
     const fileName = `${post.id}.md`;
 
-    console.log(fileName)
+    // console.log(fileName)
     const filePath = path.join(process.cwd(), 'posts', fileName);
-    console.log(filePath)
+    // console.log(filePath)
 
     // const fileContent = `# ${post.title}\n\n${post.content}`;
     // const fileContent = `---\ntitle: ${post.title}\ndate: ${post.date} 📅\n \ncover_image: ${post.cover_image}\nexcerpt: ${post.excerpt}\n---\n\n${post.content}`;
     const fileContent = `---\ntitle: ${post.title}\ndate: ${post.date} 📅\n \ncover_image: ${post.thumbnail}\ncoee: ${post.cover_image}\nexcerpt: ${post.excerpt}\n---\n\n${post.content}`;
 
     fs.writeFileSync(filePath, fileContent);
-  });
-  }
+  })}
+
 
   // Get files from the posts dir
   const files = fs.readdirSync(path.join('posts'))
