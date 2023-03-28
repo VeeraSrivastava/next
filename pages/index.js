@@ -30,33 +30,14 @@ export async function getStaticProps() {
     return Object.keys(obj).map(key => obj[key]);
     }
   }
-async function getData() {
-  try {
-    const snapshot = await get(ref(database, 'posts'));
-    console.log(snapshot.val())
-    const data = snapshot.val();
-    // Access the data here
-    // console.log(data);
-    return (data)
-  } catch (error) {
-    // Handle errors here
-    // console.error(error);
-    // return ({{title: 'Post 1', date: '8 October, 3005', excerpt: 'excerpt', content: 'Content of post 1'}, {title: 'Post 2', content: 'Content of post 2'}})
-
-  }
-}
-
-
-// getData();
-  const snapshot = await get(ref(database, '/posts/'));
-  let data = getData().then(processLogin)
-  // console.log(data)
-  function processLogin(token) {
+  const snapshot = await get(ref(database, 'posts'));
+  console.log(objectToArray(snapshot.val()))
+  const myArray =objectToArray(snapshot.val())
+// let data = snapshot.val();
+// console.log(data); 
     
-    data=token
-    const myArray = objectToArray(data);
-    // console.log(data)
-
+    // const myArray = objectToArray(data);
+    
     // const backup= [{title: 'Post 1', date: '8 October, 3005', excerpt: 'excerpt', content: 'Content of post 1'}, {title: 'Post 2', content: 'Content of post 2'}];
     // const posty = [{title: 'Post 1', date: '8 October, 3005', excerpt: 'excerpt', content: 'Content of post 1'}, {title: 'Post 2', content: 'Content of post 2'}];
   const posty=myArray
@@ -79,8 +60,6 @@ async function getData() {
   
       fs.writeFileSync(filePath, fileContent);
     })}
-  
-    }
 
   // console.log(data)
  
