@@ -36,7 +36,7 @@ export async function getStaticProps() {
   const backup= [{title: 'Post 1', date: '8 October, 3005', excerpt: 'excerpt', content: 'Content of post 1'}, {title: 'Post 2', content: 'Content of post 2'}];
   // const posty = [{title: 'Post 1', date: '8 October, 3005', excerpt: 'excerpt', content: 'Content of post 1'}, {title: 'Post 2', content: 'Content of post 2'}];
 // const posty=myArray
-const posty= myArray==undefined ? backup : myArray
+const posty= myArray==undefined||null ? backup : myArray
 console.log(4444)
 console.log(posty)
 if (posty!=null||undefined){
