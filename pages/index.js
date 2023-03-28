@@ -29,7 +29,7 @@ export async function getStaticProps() {
     return Object.keys(obj).map(key => obj[key]);
 //     }
   }
-  const snapshot = await get(ref(database, 'posts'));
+  const snapshot = await get(ref(database, '/posts/'));
   const data = snapshot.val();
   console.log(data)
   const myArray = objectToArray(data);
