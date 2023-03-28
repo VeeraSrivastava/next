@@ -33,6 +33,7 @@ export async function getStaticProps() {
 async function getData() {
   try {
     const snapshot = await get(ref(database, 'posts'));
+    console.log(snapshot)
     const data = snapshot.val();
     // Access the data here
     // console.log(data);
@@ -54,7 +55,7 @@ async function getData() {
     
     data=token
     const myArray = objectToArray(data);
-    console.log(token)
+    // console.log(data)
 
     // const backup= [{title: 'Post 1', date: '8 October, 3005', excerpt: 'excerpt', content: 'Content of post 1'}, {title: 'Post 2', content: 'Content of post 2'}];
     // const posty = [{title: 'Post 1', date: '8 October, 3005', excerpt: 'excerpt', content: 'Content of post 1'}, {title: 'Post 2', content: 'Content of post 2'}];
