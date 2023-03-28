@@ -33,7 +33,7 @@ export async function getStaticProps() {
 async function getData() {
   try {
     const snapshot = await get(ref(database, 'posts'));
-    console.log(snapshot)
+    console.log(snapshot.val())
     const data = snapshot.val();
     // Access the data here
     // console.log(data);
