@@ -47,15 +47,15 @@ async function getData() {
 
 // getData();
   const snapshot = await get(ref(database, '/posts/'));
-  const data = getData()
-  console.log(data)
+  const data = getData().then(data=>{return(data)})
+  // console.log(data)
   const myArray = objectToArray(data);
   const backup= [{title: 'Post 1', date: '8 October, 3005', excerpt: 'excerpt', content: 'Content of post 1'}, {title: 'Post 2', content: 'Content of post 2'}];
   // const posty = [{title: 'Post 1', date: '8 October, 3005', excerpt: 'excerpt', content: 'Content of post 1'}, {title: 'Post 2', content: 'Content of post 2'}];
 const posty=myArray
 // const posty= myArray==undefined||null ? backup : myArray
 console.log(4444)
-console.log(posty)
+// console.log(posty)
 if (posty!=null||undefined){
   posty.forEach((post) => {
     // console.log(post.title)
