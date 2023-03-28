@@ -29,8 +29,24 @@ export async function getStaticProps() {
     return Object.keys(obj).map(key => obj[key]);
 //     }
   }
+async function getData() {
+  try {
+    const snapshot = await get(ref(database, 'posts'));
+    const data = snapshot.val();
+    // Access the data here
+    console.log(data);
+    return (data)
+  } catch (error) {
+    // Handle errors here
+    console.error(error);
+    return ({{title: 'Post 1', date: '8 October, 3005', excerpt: 'excerpt', content: 'Content of post 1'}, {title: 'Post 2', content: 'Content of post 2'}})
+
+  }
+}
+
+// getData();
   const snapshot = await get(ref(database, '/posts/'));
-  const data = snapshot.val();
+  const data = getData()
   console.log(data)
   const myArray = objectToArray(data);
   const backup= [{title: 'Post 1', date: '8 October, 3005', excerpt: 'excerpt', content: 'Content of post 1'}, {title: 'Post 2', content: 'Content of post 2'}];
