@@ -25,9 +25,9 @@ export default function Home({ posts }) {
 }
 export async function getStaticProps() {
   function objectToArray(obj) {
-    if (obj != null||undefined){
+//     if (obj != null||undefined){
     return Object.keys(obj).map(key => obj[key]);
-    }
+//     }
   }
   const snapshot = await get(ref(database, 'posts'));
   const data = snapshot.val();
@@ -35,11 +35,11 @@ export async function getStaticProps() {
   const myArray = objectToArray(data);
   const backup= [{title: 'Post 1', date: '8 October, 3005', excerpt: 'excerpt', content: 'Content of post 1'}, {title: 'Post 2', content: 'Content of post 2'}];
   // const posty = [{title: 'Post 1', date: '8 October, 3005', excerpt: 'excerpt', content: 'Content of post 1'}, {title: 'Post 2', content: 'Content of post 2'}];
-// const posty=myArray
-const posty= myArray==undefined||null ? backup : myArray
+const posty=myArray
+// const posty= myArray==undefined||null ? backup : myArray
 console.log(4444)
 console.log(posty)
-if (posty!=null||undefined){
+// if (posty!=null||undefined){
   posty.forEach((post) => {
     // console.log(post.title)
     // const fileName = `${post.title}.md`;
@@ -76,7 +76,7 @@ if (posty!=null||undefined){
     return {
       slug,
       frontmatter,data
-    }
+//     }
   })
   
   return {
