@@ -78,10 +78,10 @@ if (posty!=null||undefined){
       frontmatter,data,myArray
     }
   })
-
+  }
   return {
     props: {
       posts: posts.sort(sortByDate),
     },
-  }}
+  }
 }
