@@ -1,3 +1,4 @@
+
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
@@ -39,7 +40,7 @@ async function getData() {
   } catch (error) {
     // Handle errors here
     console.error(error);
-    return ({{title: 'Post 1', date: '8 October, 3005', excerpt: 'excerpt', content: 'Content of post 1'}, {title: 'Post 2', content: 'Content of post 2'}})
+    // return ({{title: 'Post 1', date: '8 October, 3005', excerpt: 'excerpt', content: 'Content of post 1'}, {title: 'Post 2', content: 'Content of post 2'}})
 
   }
 }
@@ -91,7 +92,7 @@ if (posty!=null||undefined){
 
     return {
       slug,
-      frontmatter,data
+      frontmatter
     }
   })
   
@@ -101,3 +102,4 @@ if (posty!=null||undefined){
     },
   }
 }
+
