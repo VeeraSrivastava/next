@@ -36,6 +36,7 @@ export async function getStaticProps() {
   
   // const posty = [{title: 'Post 1', date: '8 October, 3005', excerpt: 'excerpt', content: 'Content of post 1'}, {title: 'Post 2', content: 'Content of post 2'}];
 const posty=myArray;
+  if (  posty != null||undefined||[]){
   posty.forEach((post) => {
     console.log(post.title)
     // const fileName = `${post.title}.md`;
@@ -51,7 +52,7 @@ const posty=myArray;
 
     fs.writeFileSync(filePath, fileContent);
   });
-
+  }
 
   // Get files from the posts dir
   const files = fs.readdirSync(path.join('posts'))
