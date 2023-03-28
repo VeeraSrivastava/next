@@ -35,44 +35,54 @@ async function getData() {
     const snapshot = await get(ref(database, 'posts'));
     const data = snapshot.val();
     // Access the data here
-    console.log(data);
+    // console.log(data);
     return (data)
   } catch (error) {
     // Handle errors here
-    console.error(error);
+    // console.error(error);
     // return ({{title: 'Post 1', date: '8 October, 3005', excerpt: 'excerpt', content: 'Content of post 1'}, {title: 'Post 2', content: 'Content of post 2'}})
 
   }
 }
 
+
 // getData();
   const snapshot = await get(ref(database, '/posts/'));
-  const data = getData().then(data=>{return(data)})
+  let data = getData().then(processLogin)
   // console.log(data)
-  const myArray = objectToArray(data);
-  const backup= [{title: 'Post 1', date: '8 October, 3005', excerpt: 'excerpt', content: 'Content of post 1'}, {title: 'Post 2', content: 'Content of post 2'}];
-  // const posty = [{title: 'Post 1', date: '8 October, 3005', excerpt: 'excerpt', content: 'Content of post 1'}, {title: 'Post 2', content: 'Content of post 2'}];
-const posty=myArray
-// const posty= myArray==undefined||null ? backup : myArray
-console.log(4444)
-// console.log(posty)
-if (posty!=null||undefined){
-  posty.forEach((post) => {
-    // console.log(post.title)
-    // const fileName = `${post.title}.md`;
-    const fileName = `${post.id}.md`;
+  function processLogin(token) {
+    
+    data=token
+    const myArray = objectToArray(data);
+    console.log(data)
 
-    // console.log(fileName)
-    const filePath = path.join(process.cwd(), 'posts', fileName);
-    // console.log(filePath)
+    // const backup= [{title: 'Post 1', date: '8 October, 3005', excerpt: 'excerpt', content: 'Content of post 1'}, {title: 'Post 2', content: 'Content of post 2'}];
+    // const posty = [{title: 'Post 1', date: '8 October, 3005', excerpt: 'excerpt', content: 'Content of post 1'}, {title: 'Post 2', content: 'Content of post 2'}];
+  const posty=myArray
+  // const posty= myArray==undefined||null ? backup : myArray
+  // console.log(4444)
+  // console.log(posty)
+  if (posty!=null||undefined){
+    posty.forEach((post) => {
+      // console.log(post.title)
+      // const fileName = `${post.title}.md`;
+      const fileName = `${post.id}.md`;
+  
+      // console.log(fileName)
+      const filePath = path.join(process.cwd(), 'posts', fileName);
+      // console.log(filePath)
+  
+      // const fileContent = `# ${post.title}\n\n${post.content}`;
+      // const fileContent = `---\ntitle: ${post.title}\ndate: ${post.date} 📅\n \ncover_image: ${post.cover_image}\nexcerpt: ${post.excerpt}\n---\n\n${post.content}`;
+      const fileContent = `---\ntitle: ${post.title}\ndate: ${post.date} 📅\n \ncover_image: ${post.thumbnail}\ncoee: ${post.cover_image}\nexcerpt: ${post.excerpt}\n---\n\n${post.content}`;
+  
+      fs.writeFileSync(filePath, fileContent);
+    })}
+  
+    }
 
-    // const fileContent = `# ${post.title}\n\n${post.content}`;
-    // const fileContent = `---\ntitle: ${post.title}\ndate: ${post.date} 📅\n \ncover_image: ${post.cover_image}\nexcerpt: ${post.excerpt}\n---\n\n${post.content}`;
-    const fileContent = `---\ntitle: ${post.title}\ndate: ${post.date} 📅\n \ncover_image: ${post.thumbnail}\ncoee: ${post.cover_image}\nexcerpt: ${post.excerpt}\n---\n\n${post.content}`;
-
-    fs.writeFileSync(filePath, fileContent);
-  })}
-
+  // console.log(data)
+ 
 
   // Get files from the posts dir
   const files = fs.readdirSync(path.join('posts'))
