@@ -5,24 +5,23 @@ import { getStorage,ref as Sref,uploadBytes,getDownloadURL,listAll,list} from "f
 import { getDatabase,ref,set,onValue,get } from "firebase/database";
 const firebaseConfig = {
 
-  apiKey: "AIzaSyAIfpudEtk7LHj6LzrklsE9c4BomRytzJU",
+  apiKey: "AIzaSyBXOen4nsT9jqhsmOxDYRNarCwnsfHHYHo",
 
-  authDomain: "blog-2ba4f.firebaseapp.com",
+  authDomain: "lt-cdr-bijay-nair.firebaseapp.com",
 
-  databaseURL: "https://blog-2ba4f-default-rtdb.firebaseio.com",
+  databaseURL: "https://lt-cdr-bijay-nair-default-rtdb.firebaseio.com",
 
-  projectId: "blog-2ba4f",
+  projectId: "lt-cdr-bijay-nair",
 
-  storageBucket: "blog-2ba4f.appspot.com",
+  storageBucket: "lt-cdr-bijay-nair.appspot.com",
 
-  messagingSenderId: "24919826708",
+  messagingSenderId: "646358313893",
 
-  appId: "1:24919826708:web:0cc5fbf19b9c30e343a201",
+  appId: "1:646358313893:web:f1ca93c2413ddea3c3964c",
 
-  measurementId: "G-THK94Z0MB4"
+  measurementId: "G-JSX5KQBM9B"
 
 };
-
 
 
 
