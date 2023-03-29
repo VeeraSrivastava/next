@@ -57,10 +57,16 @@ export async function getStaticProps() {
       // console.log(fileName)
       const filePath = path.join(process.cwd(), 'posts', fileName);
       // console.log(filePath)
-  
+      const ee = `${post.content}`
+      const words = ee.split(" "); // split the post into an array of words
+      const wordCount = words.length; // count the number of words
+      const readingSpeed = 200; // set the average reading speed in words per minute
+      const minutes = Math.ceil(wordCount / readingSpeed); // calculate the estimated reading time in minutes
+      const numm=minutes + " minute read"// output: 1 minute read
+      
       // const fileContent = `# ${post.title}\n\n${post.content}`;
       // const fileContent = `---\ntitle: ${post.title}\ndate: ${post.date} 📅\n \ncover_image: ${post.cover_image}\nexcerpt: ${post.excerpt}\n---\n\n${post.content}`;
-      const fileContent = `---\ntitle: ${post.title}\ndate: ${post.date} 📅\n \ncover_image: ${post.thumbnail}\ncoee: ${post.cover_image}\nexcerpt: ${post.excerpt}\n---\n\n${post.content}`;
+      const fileContent = `---\ntitle: ${post.title}\nid: ${post.id}\ndate: ${post.date} 📅\n \ncover_image: ${post.thumbnail}\ncoee: ${post.cover_image}\nexcerpt: ${post.excerpt}\ncontsent: ${numm}\n----\n\n${post.content}`;
   
       fs.writeFileSync(filePath, fileContent);
     })}
