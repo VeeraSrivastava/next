@@ -1,3 +1,4 @@
+
 import marked from 'marked'
 import dynamic from 'next/dynamic';
 import { useState ,useEffect} from 'react';
@@ -51,7 +52,6 @@ const actionCodeSettings = {
   // URL you want to redirect back to. The domain (www.example.com) for this
   // URL must be in the authorized domains list in the Firebase Console.
   url: 'https://veerasrivastava-didactic-space-waffle-rwxxpp744qj3x9wq-3000.preview.app.github.dev/admin',
-  url: 'https://blog.bijaynair.com/admin',
   // This must be true.
   handleCodeInApp: true,
 
@@ -265,6 +265,7 @@ listAll(imageListRef).then((response)=>{
      
 {/* 
       <br/><br/>
+
       <input type="file" 
        multiple accept="image/*"  onChange={handleImageLoad} /> */}
       <br/><br/>      <br/>
@@ -278,9 +279,9 @@ listAll(imageListRef).then((response)=>{
       
       <QuillNoSSRWrapper modules={modules} onChange={setContent} theme="snow" />
       <button>Save</button><br /><br />
-      {imageList.map((url)=>{
+      {/* {imageList.map((url)=>{
         return <img src={url} />
-      })}
+      })} */}
       <article dangerouslySetInnerHTML={{ __html: marked(content) }}></article>
    
     </form>
