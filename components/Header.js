@@ -3,11 +3,9 @@ import Link from 'next/link'
 export default function Header() {
   return (
     <header>
-      <div className='container'>
         <Link href='/' passHref>
-          <h2>Dev Blog</h2>
+         <img src='/img/name1.svg'/>
         </Link>
-      </div>
     </header>
   )
 }
