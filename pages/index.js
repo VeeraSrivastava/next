@@ -30,15 +30,16 @@ export async function getStaticProps() {
     return Object.keys(obj).map(key => obj[key]);
     }
   }
-  const snapshot = await get(ref(database, 'posts'));
-    console.log(snapshot.val())
-
-//   console.log(snapshot.val())
- 
+  const snapshot = await get(ref(database, 'posts'))
+  if(snapshot.hasChildren()){
+    console.log(true)
+  }else{
+    console.log(false)
+  }
   const myArray =objectToArray(snapshot.val())
 // let data = snapshot.val();
 // console.log(data); 
-    
+
     // const myArray = objectToArray(data);
     
     // const backup= [{title: 'Post 1', date: '8 October, 3005', excerpt: 'excerpt', content: 'Content of post 1'}, {title: 'Post 2', content: 'Content of post 2'}];
