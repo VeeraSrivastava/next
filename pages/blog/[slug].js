@@ -6,31 +6,36 @@ import marked from 'marked'
 import Link from 'next/link'
 
 export default function PostPage({
-  frontmatter: { title,  cover_image },
+  frontmatter: { title,  coee,excerpt,date,contsent },
   slug,
   content,
 }) {
   return (
-    <>
+    <div className='container-fixed-width'>
       <Link href='/'>
-        <a className='btn btn-back'>Go Back</a>
+        <a className='jeo'>Go Back</a>
       </Link>
-      {/* <div className='card card-page'> */}
-        {/* <h1 className='post-title'>{title}</h1>
-        <div className='post-date'>Posted on {date}</div>
-        <img src={cover_image} alt='' />
-        <div className='post-body'>
-          <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
-        </div> */}
+   
 
-      {/* </div> */}
-      <br/><br/>
-      {title}
-       <br/>
-      <img src={cover_image} alt='' />
-      <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
+        {/* <div className='long'>{title}</div>
+        <div className='aitt'>
+        <img src={coee}  alt='' />
+        </div>
+        <div className='ssd'>{excerpt}</div>
+     <div class="fee">   <div className='post-date rt'>Posted on {date}</div>      <div className='post-date rtd'>{contsent}</div></div> */}
+        <img src={coee}  alt='' />
 
-    </>
+<div className='ldd'>{title}</div>
+
+<div class="fee">   <div className='post-date rt'>Posted on {date}</div>      <div className='post-date rtd dawn'>{contsent}</div></div>
+
+
+
+
+
+      <div className='mdd' dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
+
+    </div>
   )
 }
 
