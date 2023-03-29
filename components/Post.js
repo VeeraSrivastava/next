@@ -1,20 +1,17 @@
-import Link from 'next/link'
-
 export default function Post({ post }) {
   return (
-    <div className='card'>
-      {/* <img src={post.frontmatter.cover_image} alt='' /> */}
-      <img src={post.frontmatter.coee} alt='' />
+       <div className='team'>
+      <img className="slicker" src={post.frontmatter.coee} alt='' />
+<div className="nm">
 
-      <div className='post-date'>Posted on {post.frontmatter.date}</div>
+      <h4>{post.frontmatter.title}</h4>
 
-      <h3>{post.frontmatter.title}</h3>
+      <p className="p">{post.frontmatter.excerpt}</p>
+      <div className='post-date rt'>Posted on {post.frontmatter.date}</div>      <div className='post-date rtd'>{post.frontmatter.contsent}</div>
 
-      <p>{post.frontmatter.excerpt}</p>
+<br/><br/>
+        <a href={`/blog/${post.slug}`} className="jo">Read More</a></div>
+      </div>
 
-      <Link href={`/blog/${post.slug}`}>
-        <a className='btn'>Read More</a>
-      </Link>
-    </div>
   )
 }
