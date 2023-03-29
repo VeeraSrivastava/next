@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@100;200;300;400;500;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;700;800;900&display=swap');
 
 * {
   box-sizing: border-box;
@@ -9,40 +10,53 @@
   padding:40px
 }
 body {
-  font-family: 'Montserrat', sans-serif;
+
+  overflow-x: hidden;
+  font-family: 'Outfit', sans-serif;
 }
 article{
   padding: 0px 24px;
 }
+.team{
+  width:400px;
+  background: white;
+}
+main{
+  display:grid;
+  place-items: center;
+  padding-bottom:65px;
+}
 /* / */
 h1{
-  font-family: "Playfair Display" !important;
+  font-family: "Fraunces" !important;
   font-style: italic !important;
   font-weight: 500 !important;
   font-size: 32px !important;
 }
 h2{
-  font-family: "Montserrat" !important;
+  font-family: "Outfit" !important;
   font-style: italic !important;
   font-size: 25px !important;
   font-weight: 200 !important;
 
 }
 h3{
-  font-family: "Montserrat" !important;
+  font-family: "Fraunces" !important;
   font-style: italic !important;
   font-size: 20px !important;
   font-weight: 400 !important;
 
 }
-p, ul, ol{
-  font-family: "Montserrat" !important;
-  font-size: 16px !important;
-}
+
 /* / */
-p {
-  margin: 15px 0;
-  line-height: 1.8;
+.p {
+  font-family: "outfit";
+  font-size: 16px;
+  max-width: 560px !important;
+  font-weight: 400;
+  display: inline-block;
+  padding-top: 4px;
+  padding-bottom: 12px;
 }
 
 a {
@@ -50,42 +64,78 @@ a {
   color: #333;
 }
 
-img {
-  width: 100px;
-  border-radius: 10px;
+.team img{
+  box-shadow: 15px 15px #00d0dd;
+  margin-bottom:20px;
+
 }
 
 header {
-  background: steelblue;
   color: #fff;
   padding: 5px;
-  margin-bottom: 40px;
+  place-content: center;
+  display: grid;
+  margin: 20px;
 }
-
+::selection{
+  background: #00d0dd;
+  color: #fff;
+}
 header a {
   color: #fff;
 }
-
-.container {
-  max-width: 80%;
-  margin: auto;
-  overflow: auto;
-  padding: 0 10px;
+.jo{
+  padding: 10px 15px;
+  background-color: #000;
+  color: white;
+  font-weight: 500;
+  box-shadow: 5px 5px #00d0dd;
 }
-
-.btn {
-  display: inline-block;
-  background: #000000;
-  color: #fff;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 225px;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 15px;
-  font-family: inherit;
+.jo:hover{
+  box-shadow: 5px 5px #000;
+background: #00D0DD;
 }
+.jeo{
+  padding: 10px 15px;
+  background-color: #000;
+  color: white;
+  font-weight: 500;
+  box-shadow: 5px 5px #00d0dd;
+  position: fixed;
+  right: 12px;
+  bottom: 55px;
+}
+.jeo:hover{
+  box-shadow: 5px 5px #000;
+background: #00D0DD;
+}
+.rt {
+  background: rgba(0, 208, 221,15%);
+  color: #00d0dd;
+  border: 1px dashed #00D0DD;
+  border-radius: 36px;
+  font-size: 16px;
+  font-family: "outfit";
+  font-weight: 500;
+  margin-top: 14px;
+  padding: 5px 10px 5px 10px;
+}
+.rtd {
+  background: rgba(161, 161, 161, 0.15);
+  color: #000;
+  border: 1px dashed #0004;
+  border-radius: 36px;
+  font-size: 16px;
+  font-family: "outfit";
+  font-weight: 300;
+  margin-top: 14px;
+  padding: 5px 10px 5px 10px;
+}
+.slicker{
+  width: 400px;
+  height: 400px;
 
+}
 .btn:focus {
   outline: none;
 }
@@ -99,36 +149,75 @@ header a {
   color: #000;
   margin-bottom: 20px;
 }
-
+.ldd{
+  font-size: 49px;
+}
+p{
+  font-weight: 200;
+  font-size: 23px;
+}
 .posts {
+
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
-  margin-top: 30px;
+grid-template-columns: repeat(3, 1fr);
+grid-gap: 55px;
+/* padding:0px 61px; */
 }
 .wddd{
 display: none !important;
 }
-.card {
+/* .card {
   padding: 15px;
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+} */
+.nm{
+  margin-left: 13px;
+
+}
+.card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  font-size: 10vh;
+  box-shadow: #495759;
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+  transition: all 500ms;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.card:hover{
+  scale: 1.2;
 }
 
 .card-page {
   padding: 15px 30px;
 }
 
-.post-title {
-  margin: 10px 0;
-}
+h4 {
+  font-family: "Fraunces";
+    font-size: 32px;
+    font-weight: 400;
+  }
 
 .post-date {
-  background: #f4f4f4;
-  margin-bottom: 20px;
-  padding: 3px 10px;
-}
 
+  margin: 3px 0px;
+  margin-bottom: 3px;
+font-size: 15px;
+
+font-weight:600;
+display: inline-block;
+}
+/* .post-date::before{
+  content: "🗓️";
+} */
 .post-body ul,
 ol {
   font-size: 110%;
@@ -143,11 +232,141 @@ ol {
   margin: 20px 0;
   line-height: 2.3;
 }
-
-@media (max-width: 500px) {
+.long{
+font-family: "fraunces";
+font-size: 48px;
+font-weight: 400;
+padding-bottom: 8px;
+padding-top: 8px;
+background-color: #00D0DD;
+color:white;
+width:100%;
+padding-left: 18vw;
+padding-right: 18vw;
+text-align: center;
+}
+.mdd{
+  display: flex;
+  flex-direction: column;
+}
+.container-fixed-width{
+  max-width:60vw;
+}
+.ssd{
+  width: 100vw;
+  padding-left: 18vw;
+  padding-right: 18vw;
+  font-size: 20px;
+  text-align: center;
+  font-family: "Outfit";
+  background-color: rgb(255, 249, 239);
+}
+.fee{
+  width: 60vw;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.aitt{
+  background-color: #00D0DD33;
+  width: 100%;
+  height: 560px;
+  display: grid;
+  place-items: center;
+}
+.aitt img{
+  object-fit: contain;
+  height: 100%;
+}
+@media (max-width:1484px) {
+  .posts {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 932px) {
   .posts {
     grid-template-columns: 1fr;
+    margin-left: -16px;
   }
+}
+@media (max-width: 442px) {
+  .slicker{
+    width: 360px;
+    height: 360px;
+  
+  }
+  .team{
+    display:grid;
+    place-items: center;
+    max-width: 360px;
+  }
+
+  h4{
+    font-size: 28px;
+  }
+}
+@media (max-width: 404px) {
+  .slicker{
+    width: 300px;
+    height: 300px;
+  
+  }
+  .team{
+    display:grid;
+    place-items: center;
+    max-width: 300px;
+  }
+
+  h4{
+    font-size: 27px;
+  }
+  br{
+    width: 8px !important;
+  }
+  .jo{
+    padding: 8px 10px;
+  }
+  .nm p{
+    padding-bottom: 7px;
+  }
+}
+@media (max-width: 316px){
+  .team img{
+    box-shadow: 10px 10px #00d0dd;
+  }
+}
+footer{
+  width: 100%;
+  height: 45px;
+  background: #000;
+  color: white !important;
+  font-family: "Outfit";
+  font-size: 16px;
+  font-weight: 400;
+  position: absolute;
+  bottom: 0px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 2px;
+  min-width: 100%;
+  position: fixed;
+bottom: 0px !important;
+}.tiny{
+  z-index: -2;position: absolute;top: 260px;
+left: 300px;
+} .dawn{margin-left:4.56px}
+
+footer a{
+  color: white;
+  display: inline;
+  text-decoration: underline;
+}
+footer a:hover{
+  color: #00d0dd;
+  display: inline;
+  text-decoration: underline;
 }
 /*!
  * Quill Editor v1.3.6
@@ -1112,5 +1331,5 @@ ol {
   }
 }
 .poo{
-  font-family: "Montserrat";
+  font-family: "Outfit";
 }
